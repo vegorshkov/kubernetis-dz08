@@ -1,0 +1,21 @@
+# В проде увеличиваем ресурсы и количество реплик
+backend:
+  replicaCount: 20
+  resources:
+    requests:
+      cpu: "2"
+      memory: "1200Mi"
+    limits:
+      cpu: "2"
+      memory: "1200Mi"
+
+database:
+  replicaCount: 5
+  resources:
+    requests:
+      cpu: "2"
+      memory: "8Gi"
+    limits:
+      cpu: "2"
+      memory: "8Gi"
+

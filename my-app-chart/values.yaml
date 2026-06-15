@@ -1,0 +1,62 @@
+# ======================================================
+# Базовые настройки компонентов приложения
+# ======================================================
+
+backend:
+  replicaCount: 10
+  image:
+    repository: myregistry/backend
+    tag: "latest"
+  resources:
+    requests:
+      cpu: "1"
+      memory: "600Mi"
+    limits:
+      cpu: "1"
+      memory: "600Mi"
+
+frontend:
+  replicaCount: 5
+  image:
+    repository: myregistry/frontend
+    tag: "latest"
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "50Mi"
+    limits:
+      cpu: "200m"
+      memory: "50Mi"
+
+database:
+  replicaCount: 3
+  image:
+    repository: myregistry/postgres-ha
+    tag: "15"
+  resources:
+    requests:
+      cpu: "1"
+      memory: "4Gi"
+    limits:
+      cpu: "1"
+      memory: "4Gi"
+  storage:
+    size: 50Gi
+    storageClass: "ssd"
+
+cache:
+  replicaCount: 3
+  image:
+    repository: myregistry/redis-cluster
+    tag: "7"
+  resources:
+    requests:
+      cpu: "1"
+      memory: "4Gi"
+    limits:
+      cpu: "1"
+      memory: "4Gi"
+  storage:
+    size: 20Gi
+    storageClass: "ssd"
+

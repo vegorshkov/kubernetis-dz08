@@ -116,5 +116,10 @@ Backend:
 
 p.s. Расчёт выполнен с учётом материалов [Considerations for large clusters](https://kubernetes.io/docs/setup/best-practices/cluster-large/) и [Architecting Kubernetes clusters — choosing a worker node size](https://learnk8s.io/kubernetes-node-size).
 
+Так же привел шаблонную структуру:
+1. Деплой на stage с базовыми ресурсами
+helm upgrade --install myapp-stage ./my-app-chart -f values-stage.yaml -n stage
 
+2. Деплой на prod с увеличенными ресурсами
+helm upgrade --install myapp-prod ./my-app-chart -f values-prod.yaml -n prod
 
